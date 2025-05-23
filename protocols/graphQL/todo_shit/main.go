@@ -131,7 +131,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
             http.Error(w, "Could not read request body", http.StatusBadRequest)
             return
         }
-        defer r.Body.Close() // Good practice to close request body
+        defer r.Body.Close() 
 
         var requestBody struct {
             Query string `json:"query"`
@@ -144,7 +144,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
         queryString = requestBody.Query
     }
 
-    log.Printf("Received GraphQL query string: [%s]", queryString) // Log the query string
+    log.Printf("Received GraphQL query string: [%s]", queryString) 
 
     if queryString == "" {
         log.Println("Query string is empty, which will lead to 'Must provide an operation' error.")
