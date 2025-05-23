@@ -8,7 +8,7 @@ import (
 	"github.com/graphql-go/graphql" 
 )
 
-// 1. Определение структуры Book
+
 type Book struct {
 	Title  string `json:"title"`  
 	Author string `json:"author"` 
